@@ -110,45 +110,57 @@ struct FirstTimeSearchView: View {
     @ObservedObject var photoSearcher: PhotoSearcher
     
     var body: some View {
-        VStack (alignment: .leading) {
-            Text("👋 Welcome!")
-                .font(.title)
-                .fontWeight(.semibold)
+        HStack (alignment: .center) {
             
-            Text("Get started by indexing photos of your choice.")
-                .padding(.bottom, 20)
+            VStack {
+                Spacer()
+                Text("👋 Welcome!")
+                    .font(.system(size: 50, weight: .black, design: .serif))
+                    .padding(.bottom, 10)
+                Spacer()
+            }.padding(10)
             
+            Divider()
+           
             
-            Group {
-                HStack {
-                    Label("Queryable is an offline application. It runs smoothly without a network.", systemImage: "wifi.slash")
-                }    .padding(.bottom, 8)
+            VStack (alignment: .leading) {
+                
+                Text("Get started by indexing photos of your choice.")
+                    .padding(.bottom, 20)
                 
                 
-                HStack {
-                    Label("The task is performed only once. It could take a few minutes, as it will index all your photos.", systemImage: "timer")
-                }    .padding(.bottom, 8)
-                
-                
-                HStack {
-                    Label("You may need to manually update the index when you have new photos.", systemImage: "arrow.clockwise")
+                Group {
+                    HStack {
+                        Label("Queryable is an offline application. It runs smoothly without a network.", systemImage: "wifi.slash")
+                    }.padding(.bottom, 8)
+                    
+                    HStack {
+                        Label("The task is performed only once. It could take a few minutes, as it will index all your photos.", systemImage: "timer")
+                    }.padding(.bottom, 8)
+                    
+                    HStack {
+                        Label("You may need to manually update the index when you have new photos.", systemImage: "arrow.clockwise")
+                    }
                 }
-            }
-            
+                
+              
+                    Button("Get Started") {
+                        showBuildIndexView = true
+                    }
+                    .buttonBorderShape(.capsule)
+                    .buttonStyle(.borderedProminent)
+                    .controlSize(.extraLarge)
+             
+               
+                
+            }.padding(30)
             
             
         }
         .padding()
-        .cornerRadius(10)
-        .padding()
+        .frame(maxWidth: 800)
         
-        
-        Button("Get Started") {
-            showBuildIndexView = true
-        }
-        .buttonBorderShape(.capsule)
-        .buttonStyle(.borderedProminent)
-        .controlSize(.extraLarge)
+    
 
     }
 }
