@@ -59,11 +59,9 @@ public struct TextEncoder {
         print(text)
         // Get models expected input length
         let inputLength = inputShape.last!
-        print("TextEncoder - inputLength for Text: \(text) - \(inputLength)")
+
         // Tokenize, padding to the expected length
         var (tokens, ids) = tokenizer.tokenize(input: text, minCount: inputLength)
-        print("TextEncoder - tokens - \(tokens)")
-
 
         // Truncate if necessary
         if ids.count > inputLength {

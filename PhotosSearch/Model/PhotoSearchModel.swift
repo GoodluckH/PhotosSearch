@@ -14,19 +14,18 @@ struct PhotoSearcherModel {
     private var texEncoder: TextEncoder?
     
     mutating func load_text_encoder() {
-        print(Bundle.main)
-        guard let path = Bundle.main.path(forResource: "CoreMLModels", ofType: nil, inDirectory: nil) else {
-            fatalError("Fatal error: failed to find the CoreML models.")
+        
+        guard let myResourceURL = Bundle.main.resourceURL else {
+            fatalError("Fatal error: failed to find the resource URL.")
         }
-        let resourceURL = URL(fileURLWithPath: path)
+       
         // TODO: move the pipeline creation to background task because it's heavy
         
-        let encoder = try! TextEncoder(resourcesAt: resourceURL)
+        let encoder = try! TextEncoder(resourcesAt: myResourceURL)
         texEncoder = encoder
     }
     
     func text_embedding(prompt: String) -> MLShapedArray<Float32> {
-        print("PhotoSearcherModel - text_embeddding - prompt: \(prompt)")
         let emb = try! texEncoder?.computeTextEmbedding(prompt: prompt)
         return emb!
     }

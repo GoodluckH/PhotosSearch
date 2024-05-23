@@ -15,6 +15,11 @@
 		80208F832BFEFA240034E384 /* Embedding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80208F822BFEFA240034E384 /* Embedding.swift */; };
 		80208F852BFEFA510034E384 /* PhotoSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80208F842BFEFA510034E384 /* PhotoSearchModel.swift */; };
 		80208F882BFF000A0034E384 /* PhotoSearcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80208F872BFF000A0034E384 /* PhotoSearcher.swift */; };
+		80208F9E2BFFDD850034E384 /* merges.txt in Resources */ = {isa = PBXBuildFile; fileRef = 80208F9C2BFFDD850034E384 /* merges.txt */; };
+		80208F9F2BFFDD850034E384 /* vocab.json in Resources */ = {isa = PBXBuildFile; fileRef = 80208F9D2BFFDD850034E384 /* vocab.json */; };
+		80208FA22BFFDEF00034E384 /* ImageEncoder_float32.mlmodelc in Resources */ = {isa = PBXBuildFile; fileRef = 80208FA02BFFDEED0034E384 /* ImageEncoder_float32.mlmodelc */; };
+		80208FA32BFFDEF00034E384 /* TextEncoder_float32.mlmodelc in Resources */ = {isa = PBXBuildFile; fileRef = 80208FA12BFFDEEF0034E384 /* TextEncoder_float32.mlmodelc */; };
+		80208FA62BFFE5E90034E384 /* BuildIndexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80208FA52BFFE5E90034E384 /* BuildIndexView.swift */; };
 		8044A4552BF712FF005231CF /* PhotosSearchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044A4542BF712FF005231CF /* PhotosSearchApp.swift */; };
 		8044A4572BF712FF005231CF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044A4562BF712FF005231CF /* ContentView.swift */; };
 /* End PBXBuildFile section */
@@ -28,6 +33,11 @@
 		80208F822BFEFA240034E384 /* Embedding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Embedding.swift; sourceTree = "<group>"; };
 		80208F842BFEFA510034E384 /* PhotoSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSearchModel.swift; sourceTree = "<group>"; };
 		80208F872BFF000A0034E384 /* PhotoSearcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSearcher.swift; sourceTree = "<group>"; };
+		80208F9C2BFFDD850034E384 /* merges.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = merges.txt; sourceTree = "<group>"; };
+		80208F9D2BFFDD850034E384 /* vocab.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vocab.json; sourceTree = "<group>"; };
+		80208FA02BFFDEED0034E384 /* ImageEncoder_float32.mlmodelc */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ImageEncoder_float32.mlmodelc; sourceTree = "<group>"; };
+		80208FA12BFFDEEF0034E384 /* TextEncoder_float32.mlmodelc */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = TextEncoder_float32.mlmodelc; sourceTree = "<group>"; };
+		80208FA52BFFE5E90034E384 /* BuildIndexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildIndexView.swift; sourceTree = "<group>"; };
 		8044A4512BF712FF005231CF /* PhotosSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotosSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8044A4542BF712FF005231CF /* PhotosSearchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosSearchApp.swift; sourceTree = "<group>"; };
 		8044A4562BF712FF005231CF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -84,6 +94,26 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		80208F9B2BFFDD6A0034E384 /* CoreMLModels */ = {
+			isa = PBXGroup;
+			children = (
+				80208FA02BFFDEED0034E384 /* ImageEncoder_float32.mlmodelc */,
+				80208FA12BFFDEEF0034E384 /* TextEncoder_float32.mlmodelc */,
+				80208F9C2BFFDD850034E384 /* merges.txt */,
+				80208F9D2BFFDD850034E384 /* vocab.json */,
+			);
+			path = CoreMLModels;
+			sourceTree = "<group>";
+		};
+		80208FA42BFFE5C90034E384 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8044A4562BF712FF005231CF /* ContentView.swift */,
+				80208FA52BFFE5E90034E384 /* BuildIndexView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		8044A4482BF712FF005231CF = {
 			isa = PBXGroup;
 			children = (
@@ -103,12 +133,12 @@
 		8044A4532BF712FF005231CF /* PhotosSearch */ = {
 			isa = PBXGroup;
 			children = (
+				80208FA42BFFE5C90034E384 /* View */,
+				80208F9B2BFFDD6A0034E384 /* CoreMLModels */,
 				80208F862BFEFFFC0034E384 /* ViewModel */,
 				80208F772BFEF1000034E384 /* Model */,
 				80208F742BFEEFF10034E384 /* CLIP */,
-				8044A4632BF7134C005231CF /* CoreMLModels */,
 				8044A4542BF712FF005231CF /* PhotosSearchApp.swift */,
-				8044A4562BF712FF005231CF /* ContentView.swift */,
 				8044A4582BF71300005231CF /* Assets.xcassets */,
 				8044A45D2BF71300005231CF /* PhotosSearch.entitlements */,
 				8044A45A2BF71300005231CF /* Preview Content */,
@@ -122,13 +152,6 @@
 				8044A45B2BF71300005231CF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		8044A4632BF7134C005231CF /* CoreMLModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CoreMLModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +212,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80208F9E2BFFDD850034E384 /* merges.txt in Resources */,
+				80208FA22BFFDEF00034E384 /* ImageEncoder_float32.mlmodelc in Resources */,
+				80208FA32BFFDEF00034E384 /* TextEncoder_float32.mlmodelc in Resources */,
+				80208F9F2BFFDD850034E384 /* vocab.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +232,7 @@
 				80208F7C2BFEF94C0034E384 /* TextEncoder.swift in Sources */,
 				80208F7F2BFEF98C0034E384 /* BPETokenizer.swift in Sources */,
 				80208F882BFF000A0034E384 /* PhotoSearcher.swift in Sources */,
+				80208FA62BFFE5E90034E384 /* BuildIndexView.swift in Sources */,
 				8044A4572BF712FF005231CF /* ContentView.swift in Sources */,
 				8044A4552BF712FF005231CF /* PhotosSearchApp.swift in Sources */,
 				80208F7A2BFEF1120034E384 /* NSImage+Extension.swift in Sources */,

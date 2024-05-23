@@ -419,7 +419,7 @@ class PhotoSearcher: ObservableObject {
         self.searchResultCode = .IS_SEARCHING
         
         let _text_emb = self.photoSearchModel.text_embedding(prompt: query)
-        print(_text_emb)
+        
         self.searchResultCode = .NO_RESULT
 
         do {
